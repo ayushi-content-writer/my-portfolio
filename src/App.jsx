@@ -1,11 +1,23 @@
+import './App.css';
+import Navbar from './components/NavBar';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Blog from './pages/Blog.jsx';
+// import Store from './pages/Projects.jsx/index.js';
+// import Contact from './pages/Contact';
+import Projects from './pages/Projects.jsx';
 
-import './App.css'
-// src/App.jsx
 function App() {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <h1 className="text-4xl font-bold text-blue-500">Hello, Tailwind CSS!</h1>
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/projects" element={<Projects />} />
+        {/* <Route path="/contact" element={<Contact />} /> */}
+      </Routes>
+    </Router>
   );
 }
 

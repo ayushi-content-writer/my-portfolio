@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:700");
+
+/* Container Styling */
+.experience-animated-container {
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #f5e5d6; /* Brown background */
+  height: auto; /* Default to auto for smaller screens */
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .experience-animated-container {
+    height: 100vh; /* Apply 100vh only on larger screens */
+  }
+}
+
+/* Title Styling */
+.animated-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #bd5d19;
+  margin-bottom: 2.5rem;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .animated-title {
+    font-size: 2rem; /* Smaller title for mobile */
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Experience List Styling */
+.animated-experience-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  z-index: 1;
+}
+
+.animated-experience-item {
+  width: 300px; /* Slightly reduced card size */
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: inset 0 6px 12px rgba(0, 0, 0, 0.15), 0 12px 24px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.animated-experience-item:hover {
+  transform: translateY(-8px);
+  box-shadow: inset 0 6px 12px rgba(0, 0, 0, 0.15), 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .animated-experience-item {
+        width: 300px; /* Slightly reduced card size */
+        padding: 1.5rem;
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: inset 0 6px 12px rgba(0, 0, 0, 0.15), 0 12px 24px rgba(0, 0, 0, 0.3);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        position: relative;
+        z-index: 2;
+      }
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.company-logo {
+  height: 70px; /* Smaller logo size */
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .company-logo {
+    height: 60px; /* Smaller logos for mobile */
+  }
+}
+
+.company-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #6b4226; /* Dark brown */
+  margin: 0.5rem 0;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: #8c6248; /* Medium brown */
+  margin-bottom: 0.5rem;
+}
+
+.role {
+  font-size: 1rem;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .company-name {
+    font-size: 1.3rem; /* Adjusted for smaller screens */
+  }
+  .subtitle {
+    font-size: 0.8rem; /* Adjusted for smaller screens */
+  }
+  .role {
+    font-size: 0.9rem; /* Adjusted for smaller screens */
+  }
+}

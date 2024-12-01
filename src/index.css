@@ -2,3 +2,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+body {
+    font-family: 'Mada', sans-serif;
+    margin: 0;
+    background-color: #F4F1E8;
+    scroll-behavior: smooth;
+    
+  }
+  /* index.css */
+
+
+/* Scroll Snap Container */
+.snap-container {
+  scroll-snap-type: y mandatory; /* Enable vertical snapping */
+  overflow-y: scroll; /* Allow vertical scrolling */
+  height: 100vh; /* Full height viewport */
+}
+
+/* Scroll Snap Sections */
+.snap-section {
+  scroll-snap-align: start; /* Snap to the start of each section */
+  height: 100vh; /* Each section takes up the full viewport */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
