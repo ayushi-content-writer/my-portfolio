@@ -1,15 +1,16 @@
 /* General Styling */
 .hero-container {
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 2rem;
-  background-color: #fce9dc; /* Light cream background */
+  background-color: #e6f7ff;
   text-align: center;
   position: relative;
-  overflow: hidden; /* Prevent waves from causing scrollbars */
+  overflow: hidden;
   z-index: 1;
 }
 
@@ -26,12 +27,12 @@
 
 .hero-container .wave {
   position: absolute;
-  top: 0;
+  top: 100px;
   left: 0;
   opacity: 0.4;
   width: 800px;
   height: 800px;
-  background: #d8a47f; /* Light brown shade */
+  background: #bae6fd;
   margin-left: 60%;
   margin-top: 0;
   transform-origin: 50% 46%;
@@ -41,13 +42,13 @@
 
 .hero-container .wave.-three {
   animation: drift 7500ms infinite linear;
-  background-color: #c28e6d; /* Medium brown shade */
+  background-color: #7dd3fc;
 }
 
 .hero-container .wave.-two {
   animation: drift 3000ms infinite linear;
   opacity: 0.1;
-  background: #7d4f2d; /* Dark brown shade with transparency */
+  background: #38bdf8;
 }
 
 /* Wave Animation */
@@ -60,132 +61,70 @@
   }
 }
 
-/* Loading Icons */
-.hero-container .contain {
-  animation-delay: 4s;
-  z-index: 1000;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(#d8a47f, #c28e6d); /* Gradient with brown shades */
-}
-
-.hero-container .icon {
-  width: 100px;
-  height: 100px;
-  margin: 0 5px;
-}
-
-.hero-container .icon img {
-  animation: anim 2s ease infinite;
-  transform: scale(0, 0) rotateZ(180deg);
-}
-
-.hero-container .icon:nth-child(2) img {
-  animation-delay: 0.2s;
-}
-
-.hero-container .icon:nth-child(3) img {
-  animation-delay: 0.3s;
-}
-
-.hero-container .icon:nth-child(4) img {
-  animation-delay: 0.4s;
-}
-
-@keyframes anim {
-  0% {
-    transform: scale(0, 0) rotateZ(-90deg);
-    opacity: 0;
-  }
-  30% {
-    transform: scale(1, 1) rotateZ(0deg);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1, 1) rotateZ(0deg);
-    opacity: 1;
-  }
-  80% {
-    transform: scale(0, 0) rotateZ(90deg);
-    opacity: 0;
-  }
-}
-
 /* Content Styling */
 .hero-content {
-  z-index: 2; /* Ensure text stays above waves */
+  z-index: 2;
   position: relative;
+  margin-bottom: 2rem;
 }
 
 .hero-title {
   font-size: clamp(2rem, 5vw, 6rem);
   font-weight: bold;
-  color: #3b3b3b;
+  color: #023047;
   margin-bottom: 1rem;
 }
 
 .hero-name {
-  color: #bd5d19;
+  color: #0077b6;
   font-weight: bold;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  min-width: 220px; /* Reserve space for the longest text */
+}
+
+.hero-name .typewriter-wrapper {
+  overflow: hidden;
+  text-align: center;
 }
 
 .hero-subtitle {
   font-size: clamp(1rem, 3vw, 1.5rem);
-  color: #6f6f6f;
+  color: #4a5568;
   margin-top: 1rem;
 }
 
+/* Button Styling */
 .hero-button {
-  margin-top: 2rem;
+  margin-top: 1rem;
+  z-index: 2;
+  position: relative;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .hero-title {
     font-size: 3rem;
-    font-weight: bold;
-    color: #3b3b3b;
-    
   }
-  .hero-container {
-    height: 80vh; /* Full viewport height */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    background-color: #fce9dc; /* Light cream background */
-    text-align: center;
-    position: relative;
-    overflow: hidden; /* Prevent waves from causing scrollbars */
-    z-index: 1;
-  }
+
   .hero-container .wave {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0.4;
     width: 600px;
     height: 600px;
-    background: #d8a47f; /* Light brown shade */
     margin-left: 30%;
     margin-top: 100px;
-    transform-origin: 50% 46%;
-    border-radius: 43%;
-    animation: drift 7000ms infinite linear;
   }
+
   .hero-title {
     font-size: clamp(2rem, 5vw, 3rem);
   }
+
   .hero-subtitle {
     font-size: clamp(1rem, 4vw, 1.3rem);
+  }
+
+  .hero-name {
+    min-width: 180px; /* Adjust for smaller screens */
   }
 }
 
@@ -193,7 +132,12 @@
   .hero-title {
     font-size: clamp(1.5rem, 6vw, 2.5rem);
   }
+
   .hero-subtitle {
     font-size: clamp(0.9rem, 5vw, 1.1rem);
+  }
+
+  .hero-name {
+    min-width: 150px; /* Adjust for smallest screens */
   }
 }

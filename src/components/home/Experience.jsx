@@ -12,10 +12,10 @@ const ExperienceAnimated = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setInView(entry.isIntersecting); // Update state when the element is in view
+        setInView(entry.isIntersecting);
       },
       {
-        threshold: 0.3, // Trigger when 30% of the section is visible
+        threshold: 0.3,
       }
     );
 
@@ -33,19 +33,25 @@ const ExperienceAnimated = () => {
   const experiences = [
     {
       logo: artLogo,
+      date: "Apr 2019",
       company: "ALAP Jhankriti",
       subtitle: "(now World Forum for Art and Culture)",
       role: "Social Media Marketing Intern",
+      link: "#",
     },
     {
       logo: logo2,
+      date: "May 2021",
       company: "Content Euphoria",
       role: "Senior Content Writer",
+      link: "#",
     },
     {
       logo: indie,
+      date: "Sep 2022",
       company: "Indiefluence",
       role: "Content Head",
+      link: "#",
     },
   ];
 
@@ -60,6 +66,9 @@ const ExperienceAnimated = () => {
       >
         EXPERIENCE
       </motion.h2>
+      <p className="animated-description">
+        Professional experience I’ve gained through various opportunities.
+      </p>
 
       {/* Experience Cards */}
       <div className="animated-experience-list">
@@ -76,9 +85,13 @@ const ExperienceAnimated = () => {
             <div className="logo-container">
               <img src={exp.logo} alt={exp.company} className="company-logo" />
             </div>
+            <p className="date">{exp.date}</p>
             <h3 className="company-name">{exp.company}</h3>
             {exp.subtitle && <p className="subtitle">{exp.subtitle}</p>}
             <p className="role">{exp.role}</p>
+            <a href={exp.link} className="see-project">
+              See Project
+            </a>
           </motion.div>
         ))}
       </div>

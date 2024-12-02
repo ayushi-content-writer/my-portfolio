@@ -27,7 +27,7 @@ const Navbar = () => {
         {/* Center Section */}
         <div className="hidden lg:flex space-x-4 text-gray-500">
           <div className="flex items-center space-x-2">
-            <span>CALL ME. (+91) 97296-88993
+            <span>(+91) 97296-88993
             </span>
             <span>/</span>
             <span>aayushiverma.kkr@gmail.com</span>

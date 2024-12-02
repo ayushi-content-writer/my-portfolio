@@ -81,7 +81,7 @@ const styles = {
     position: "relative",
     width: "200px",
     height: "70px",
-    backgroundColor: "#bd5d19",
+    background: "linear-gradient(135deg, #00509e, #003f7f)", // Darker blue gradient
     color: "#fff",
     border: "none",
     borderRadius: "10px", // Rectangle with slightly rounded corners
@@ -92,14 +92,14 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
     outline: "none",
-    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+    boxShadow: "inset 6px 6px 12px rgba(0, 0, 0, 0.4), inset -6px -6px 12px rgba(255, 255, 255, 0.3)", // Enhanced inner shadow
     transition: "all 0.3s ease",
   },
   circularButton: {
     position: "relative",
     width: "80px",
     height: "80px",
-    backgroundColor: "#bd5d19",
+    background: "linear-gradient(135deg, #00509e, #003f7f)", // Darker blue gradient
     color: "#fff",
     border: "none",
     borderRadius: "50%",
@@ -110,7 +110,7 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
     outline: "none",
-    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+    boxShadow: "inset 6px 6px 12px rgba(0, 0, 0, 0.4), inset -6px -6px 12px rgba(255, 255, 255, 0.3)", // Enhanced inner shadow
     transition: "all 0.3s ease",
   },
   text: {

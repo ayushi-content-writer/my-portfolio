@@ -1,0 +1,53 @@
+/* Background Animation */
+@keyframes move-slow {
+    0% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(60px, -60px);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+  
+  @keyframes move-fast {
+    0% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(-80px, 80px);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+  
+  .animate-move-slow {
+    animation: move-slow 6s ease-in-out infinite;
+  }
+  
+  .animate-move-fast {
+    animation: move-fast 4s ease-in-out infinite;
+  }
+  
+  /* General Styles */
+  h1 {
+    line-height: 1.2;
+  }
+  
+  p {
+    max-width: 100%;
+  }
+  
+  @media (max-width: 768px) {
+    .lg:w-1/2 {
+      width: 100%;
+    }
+  
+    .flex {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  

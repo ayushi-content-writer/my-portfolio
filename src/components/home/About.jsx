@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import "../css/About.css";
 
 const AboutMe = () => {
   const fadeIn = {
@@ -9,50 +10,64 @@ const AboutMe = () => {
 
   return (
     <motion.section
-      className="h-screen bg-gradient-to-br from-[#f3e9dd] to-[#e6ccb2] flex flex-col lg:flex-row items-center justify-center px-6 lg:px-24 py-16"
+      className="relative h-screen bg-white flex justify-center items-center overflow-hidden"
       initial="hidden"
       animate="visible"
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 0.6 }}
     >
-      {/* Left Content */}
-      <motion.div
-        className="lg:w-1/2 text-center lg:text-left mb-8 lg:mb-0"
-        variants={fadeIn}
-        transition={{ duration: 0.8, delay: 0.2 }}
-      >
-        <h1 className="text-5xl font-bold text-[#5d4037] relative">
-          About <span className="text-[#ff7043]">Me</span>
-        </h1>
-        <p className="mt-6 text-[#6d4c41] text-lg leading-relaxed">
-          Hello! I’m a writer, poetess, and creative thinker born in the heart of
-          a historical gem. My journey in storytelling started from a small
-          corner of my room, crafting words that inspired, educated, and connected.
-        </p>
-        <p className="mt-4 text-[#6d4c41] text-lg leading-relaxed">
-          Over the years, I’ve evolved from writing academic content to leading a
-          creative team, always striving to weave authenticity and passion into
-          everything I create.
-        </p>
-      </motion.div>
+      {/* Animated Background Elements */}
+      <div className="absolute -z-0 top-[100px] left-[50%] w-[1200px] h-[600px] bg-[#bae6fd] rounded-full blur-3xl opacity-85 animate-move-slow"></div>
+      <div className="absolute -z-0 top-[400px] left-[10%] w-[200px] h-[300px] bg-[#9edbfc] rounded-full blur-3xl opacity-65 animate-move-slow"></div>
+      <div className="absolute -z-0 top-[200px] left-[30%] w-[100px] h-[300px] bg-[#b7d2e0] rounded-full blur-3xl animate-move-slow"></div>
 
-      {/* Right Content */}
-      <motion.div
-        className="lg:w-1/2 flex justify-center items-center"
-        variants={fadeIn}
-        transition={{ duration: 0.8, delay: 0.4 }}
-      >
-        <div className="relative">
-          {/* Decorative Circle */}
-          <div className="absolute inset-0 m-auto w-96 h-96 bg-[#ffab91] rounded-full blur-xl opacity-70"></div>
-          <div className="relative rounded-full bg-white shadow-lg w-80 h-80 flex items-center justify-center">
-            <img
-              src="https://via.placeholder.com/200"
-              alt="Profile"
-              className="rounded-full object-cover w-72 h-72"
-            />
+      {/* Content Container */}
+      <div className="relative w-full px-6 lg:px-24 flex flex-col lg:flex-row items-center justify-center gap-16 z-10">
+        {/* Left Content */}
+        <motion.div
+          className="lg:w-1/2 flex flex-col justify-center items-center lg:items-start text-center lg:text-left"
+          variants={fadeIn}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <h1 className="text-5xl font-bold text-[#023047] relative">
+            About <span className="text-[#023047]">Me</span>
+          </h1>
+          <p className="mt-6 text-gray-700 text-lg leading-relaxed">
+            Writer and poetess born in the cradle of a historical gem,
+            Kurukshetra, as an English major, I was infused with a deep
+            appreciation and fascination for creativity and arts. With a rich
+            experience of nearly 3 years in Writing and almost a year in
+            Creative management, I have most lovingly woven raw ideas, giving
+            them a compelling edge and blending them with catchy
+            call-to-actions.
+          </p>
+          <p className="mt-4 text-gray-700 text-lg leading-relaxed">
+            From writing academic content to managing a creative team in the
+            marketing field, losing my mind to client calls and team management
+            but finding my passion has been the most anticipated journey that I
+            have covered. In the coming years, I envision myself leading and
+            guiding teams and ideas to their conclusions. Aspirations and
+            Inspirations... that&apos;s what I want to work for and wish to live
+            for.
+          </p>
+        </motion.div>
+
+        {/* Right Content */}
+        <motion.div
+          className="lg:w-1/2 flex justify-center items-center"
+          variants={fadeIn}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <div className="relative">
+            <div className="relative rounded-full bg-white shadow-lg flex items-center justify-center">
+              <img
+                src="https://via.placeholder.com/300"
+                alt="Profile"
+                className="rounded-full object-cover w-full h-[60vh]"
+              />
+            </div>
           </div>
-        </div>
-      </motion.div>
+        </motion.div>
+      </div>
     </motion.section>
   );
 };
