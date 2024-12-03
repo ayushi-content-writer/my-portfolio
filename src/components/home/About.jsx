@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "../css/About.css";
+import profile from '../../assets/ayushiprofile.png'
 
 const AboutMe = () => {
   const fadeIn = {
@@ -58,11 +59,11 @@ const AboutMe = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <div className="relative">
-            <div className="relative rounded-full bg-white shadow-lg flex items-center justify-center">
+            <div className="relative  flex items-center justify-center">
               <img
-                src="https://via.placeholder.com/300"
+                src={profile}
                 alt="Profile"
-                className="rounded-full object-cover w-full h-[60vh]"
+                className=" object-cover w-full h-[100vh]"
               />
             </div>
           </div>

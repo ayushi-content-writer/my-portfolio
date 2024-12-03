@@ -12,17 +12,11 @@ body {
     
   }
 
-  /* Apply Manrope font globally */
-* {
- 
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+
 
 /* Optional: Reset styles for headings, buttons, and text */
 h1, h2, h3, h4, h5, h6, button, p, a, div, span {
-  font-family: "Manrope", sans-serif;
+  font-family: 'Mada', sans-serif;
   line-height: 1.6;
 }
 

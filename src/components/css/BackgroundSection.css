@@ -1,0 +1,73 @@
+/* Container Styling */
+.background-container {
+    font-family: "Montserrat", sans-serif;
+    background: linear-gradient(135deg, #e0f7ff, #bae6fd); /* Light blue gradient */
+    padding: 5rem 2rem;
+    text-align: center;
+  }
+  
+  .background-title {
+    font-size: 2.5rem;
+    color: #1e3a8a; /* Dark blue */
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+  }
+  
+  /* Items Styling */
+  .background-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .background-item {
+    background: linear-gradient(135deg, #93c5fd, #3b82f6); /* Modern blue gradient */
+    padding: 2rem;
+    border-radius: 16px;
+    width: 280px;
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4); /* Glowing shadow */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .background-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(59, 130, 246, 0.6); /* Enhanced shadow on hover */
+  }
+  
+  /* Icon Container */
+  .icon-container {
+    background: rgba(255, 255, 255, 0.2);
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 2rem;
+    color: #1e40af; /* Icon color */
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Titles and Subtitles */
+  .item-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+  
+  .item-subtitle {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #dbeafe; /* Soft blue */
+    text-align: center;
+  }
+  

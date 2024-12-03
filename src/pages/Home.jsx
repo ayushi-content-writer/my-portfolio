@@ -2,6 +2,7 @@ import React from "react";
 import HeroSection from "../components/home/HeroSection";
 import AboutMe from "../components/home/About";
 import Experience from "../components/home/Experience";
+import BackgroundSection from "../components/home/BackgroundSection";
 
 const Home = () => {
   return (
@@ -16,6 +17,10 @@ const Home = () => {
         <AboutMe />
       </div>
 
+
+      <div className="snap-section">
+        <BackgroundSection/>
+      </div>
       {/* Experience Section */}
       <div className="snap-section">
         <Experience />

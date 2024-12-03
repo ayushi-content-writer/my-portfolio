@@ -8,12 +8,15 @@ const DownloadButton = () => {
   const buttonRef = React.useRef(null);
   const textRef = React.useRef(null);
 
+  // Path to your PDF file
+  const pdfUrl = "../assets/avAts.pdf"; // Replace with the actual path to your PDF file
+
   const startDownload = () => {
     if (downloading || downloadComplete) return;
 
     setDownloading(true);
 
-    // Transition the button to a circular shape
+    // Animate the button to a circular shape
     gsap.to(buttonRef.current, {
       width: "80px",
       height: "80px",
@@ -22,6 +25,7 @@ const DownloadButton = () => {
       ease: "power2.out",
     });
 
+    // Hide button text and show progress percentage
     gsap.to(textRef.current, {
       opacity: 0,
       duration: 0.2,
@@ -31,7 +35,7 @@ const DownloadButton = () => {
       },
     });
 
-    // Simulated download progress
+    // Simulate download progress
     const duration = 3; // seconds
     const progressInterval = 30; // ms
     let progress = 0;
@@ -45,6 +49,13 @@ const DownloadButton = () => {
         setDownloadComplete(true);
         setDownloading(false);
 
+        // Trigger PDF download
+        const link = document.createElement("a");
+        link.href = pdfUrl;
+        link.download = "Resume.pdf"; // Rename the downloaded file
+        link.click();
+
+        // Change button text to "Open"
         gsap.to(textRef.current, {
           textContent: "Open",
           duration: 0.5,
@@ -56,12 +67,19 @@ const DownloadButton = () => {
     }, progressInterval);
   };
 
+  const openPdf = () => {
+    if (!downloadComplete) return;
+
+    // Open the PDF file in a new tab
+    window.open(pdfUrl, "_blank");
+  };
+
   return (
     <div style={styles.wrapper}>
       <button
         ref={buttonRef}
         style={downloading ? styles.circularButton : styles.rectangularButton}
-        onClick={startDownload}
+        onClick={downloadComplete ? openPdf : startDownload}
         disabled={downloading}
       >
         <span ref={textRef} style={styles.text}>
@@ -81,10 +99,10 @@ const styles = {
     position: "relative",
     width: "200px",
     height: "70px",
-    background: "linear-gradient(135deg, #00509e, #003f7f)", // Darker blue gradient
+    background: "linear-gradient(135deg, #00509e, #003f7f)", // Blue gradient
     color: "#fff",
     border: "none",
-    borderRadius: "10px", // Rectangle with slightly rounded corners
+    borderRadius: "10px", // Slightly rounded corners
     cursor: "pointer",
     fontSize: "16px",
     fontWeight: "bold",
@@ -92,17 +110,18 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
     outline: "none",
-    boxShadow: "inset 6px 6px 12px rgba(0, 0, 0, 0.4), inset -6px -6px 12px rgba(255, 255, 255, 0.3)", // Enhanced inner shadow
+    boxShadow:
+      "inset 6px 6px 12px rgba(0, 0, 0, 0.4), inset -6px -6px 12px rgba(255, 255, 255, 0.3)", // Inner shadow
     transition: "all 0.3s ease",
   },
   circularButton: {
     position: "relative",
     width: "80px",
     height: "80px",
-    background: "linear-gradient(135deg, #00509e, #003f7f)", // Darker blue gradient
+    background: "linear-gradient(135deg, #00509e, #003f7f)", // Blue gradient
     color: "#fff",
     border: "none",
-    borderRadius: "50%",
+    borderRadius: "50%", // Fully rounded for circular shape
     cursor: "pointer",
     fontSize: "16px",
     fontWeight: "bold",
@@ -110,7 +129,8 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
     outline: "none",
-    boxShadow: "inset 6px 6px 12px rgba(0, 0, 0, 0.4), inset -6px -6px 12px rgba(255, 255, 255, 0.3)", // Enhanced inner shadow
+    boxShadow:
+      "inset 6px 6px 12px rgba(0, 0, 0, 0.4), inset -6px -6px 12px rgba(255, 255, 255, 0.3)", // Inner shadow
     transition: "all 0.3s ease",
   },
   text: {

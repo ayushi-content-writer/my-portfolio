@@ -78,9 +78,9 @@ const ExperienceAnimated = () => {
             className="animated-experience-item"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
-            initial={{ opacity: 0, y: 50 }}
-            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-            transition={{ delay: index * 0.1, duration: 0.4 }}
+            initial={{ opacity: 0, y: 10 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+            // transition={{ delay: index * 0.1, duration: 0.4 }}
           >
             <div className="logo-container">
               <img src={exp.logo} alt={exp.company} className="company-logo" />
