@@ -41,7 +41,7 @@
   }
   
   @media (max-width: 768px) {
-    .lg:w-1/2 {
+    .lg {
       width: 100%;
     }
   

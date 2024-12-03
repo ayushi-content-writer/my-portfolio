@@ -25,7 +25,7 @@ const AboutMe = () => {
       <div className="relative w-full px-6 lg:px-24 flex flex-col lg:flex-row items-center justify-center gap-16 z-10">
         {/* Left Content */}
         <motion.div
-          className="lg:w-1/2 flex flex-col justify-center items-center lg:items-start text-center lg:text-left"
+          className="lg:w-1/2  flex flex-col justify-center items-center lg:items-start text-center lg:text-left"
           variants={fadeIn}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
