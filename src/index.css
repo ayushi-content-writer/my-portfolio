@@ -1,7 +1,12 @@
-/* src/index.css */
+
+@import "../node_modules/@fortawesome/fontawesome-free/css/all.min.css";
+
+/* Tailwind Directives */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Your custom CSS comes here */
 
 
 body {

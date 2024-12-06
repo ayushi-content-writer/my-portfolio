@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import { FaPhone, FaEnvelope } from 'react-icons/fa'; 
+
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,15 +23,15 @@ const Navbar = () => {
         {/* Left Section */}
         <div className="flex items-center space-x-4">
           <h1 className="font-bold text-2xl text-black">AAYUSHI</h1>
-          <p className="text-sm text-gray-500">CONTENT WRITER</p>
         </div>
 
         {/* Center Section */}
         <div className="hidden lg:flex space-x-4 text-gray-500">
           <div className="flex items-center space-x-2">
-            <span>(+91) 97296-88993
-            </span>
+            <FaPhone className="w-6 h-6 text-[#0077b6]" />
+            <span>(+91) 97296-88993</span>
             <span>/</span>
+            <FaEnvelope className="w-6 h-6 text-[#0077b6]" />
             <span>aayushiverma.kkr@gmail.com</span>
           </div>
         </div>
@@ -72,25 +74,19 @@ const Navbar = () => {
 
             {/* Navigation Links */}
             <ul className="mt-8 space-y-4 text-3xl lg:text-4xl xl:text-6xl font-medium">
-              <NavLink to="/" className="hover:text-[#bd5d19]">
+              <NavLink to="/" className="hover:text-[#0077b6]">
                 <li>Intro</li>
               </NavLink>
-              {/* <NavLink to="/services" className="hover:text-[#bd5d19]">
-                <li>Services</li>
-              </NavLink> */}
-              <NavLink to="/projects" className="hover:text-[#bd5d19]">
+              <NavLink to="/projects" className="hover:text-[#0077b6]">
                 <li>Projects</li>
               </NavLink>
-              {/* <NavLink to="/awards" className="hover:text-[#bd5d19]">
-                <li>Awards</li>
-              </NavLink> */}
-              <NavLink to="/experience" className="hover:text-[#bd5d19]">
+              <NavLink to="/experience" className="hover:text-[#0077b6]">
                 <li>Experience</li>
               </NavLink>
-              <NavLink to="/testimonials" className="hover:text-[#bd5d19]">
+              <NavLink to="/testimonials" className="hover:text-[#0077b6]">
                 <li>Testimonials</li>
               </NavLink>
-              <NavLink to="/contact" className="hover:text-[#bd5d19]">
+              <NavLink to="/contact" className="hover:text-[#0077b6]">
                 <li>Contact</li>
               </NavLink>
             </ul>

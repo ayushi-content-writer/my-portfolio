@@ -1,0 +1,25 @@
+.testimonial-slider-container {
+    background-color: #f0f4fa;
+  }
+  
+  .testimonial-card {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .quote-icon {
+    font-size: 4rem;
+    line-height: 1;
+    color: #cfd8e3;
+  }
+  
+  .testimonial-card h2 {
+    font-weight: 700;
+  }
+  
+  .testimonial-card p {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+  
