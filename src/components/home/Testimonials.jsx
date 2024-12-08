@@ -68,7 +68,7 @@ const TestimonialSlider = () => {
   };
 
   return (
-    <div className="testimonial-slider-container bg-blue-100 py-16 px-4">
+    <div className="testimonial-slider-container bg-backgroundOffWhite py-16 px-4">
       <div
         ref={sliderRef}
         className="relative max-w-4xl mx-auto overflow-hidden"
@@ -88,7 +88,7 @@ const TestimonialSlider = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="testimonial-card bg-white shadow-lg rounded-xl overflow-hidden flex flex-col md:flex-row min-w-full"
+              className="testimonial-card bg-backgroundBlue shadow-lg rounded-xl overflow-hidden flex flex-col md:flex-row min-w-full"
             >
               {/* Image on Top for Mobile */}
               <div className="flex-1 md:order-2">
@@ -99,14 +99,14 @@ const TestimonialSlider = () => {
                 />
               </div>
               {/* Text Content */}
-              <div className="bg-blue-50 p-6 md:p-8 flex-1 md:order-1">
-                <div className="quote-icon text-blue-300 text-5xl md:text-6xl leading-none">
+              <div className="p-6 md:p-8 flex-1 md:order-1">
+                <div className="quote-icon text-primary text-5xl md:text-6xl leading-none">
                   “
                 </div>
-                <h2 className="text-blue-800 font-extrabold text-xl md:text-2xl mt-4">
+                <h2 className="text-secondary font-extrabold text-xl md:text-2xl mt-4">
                   {testimonial.title}
                 </h2>
-                <p className="text-gray-600 mt-4 text-sm md:text-base leading-relaxed">
+                <p className="text-tertiary mt-4 text-sm md:text-base leading-relaxed">
                   {testimonial.text}
                 </p>
               </div>
@@ -121,7 +121,7 @@ const TestimonialSlider = () => {
               key={index}
               onClick={() => setCurrentIndex(index)}
               className={`h-4 w-4 rounded-full mx-1 transition-colors ${
-                index === currentIndex ? "bg-blue-700" : "bg-gray-300"
+                index === currentIndex ? "bg-primary" : "bg-tertiary"
               }`}
             ></button>
           ))}

@@ -6,6 +6,7 @@ import Blog from './pages/Blog.jsx';
 // import Store from './pages/Projects.jsx/index.js';
 // import Contact from './pages/Contact';
 import Projects from './pages/Projects.jsx';
+import Footer from './components/Footer.jsx';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/projects" element={<Projects />} />
         {/* <Route path="/contact" element={<Contact />} /> */}
       </Routes>
+      <Footer/>
     </Router>
   );
 }

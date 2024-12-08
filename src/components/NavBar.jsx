@@ -28,10 +28,10 @@ const Navbar = () => {
         {/* Center Section */}
         <div className="hidden lg:flex space-x-4 text-gray-500">
           <div className="flex items-center space-x-2">
-            <FaPhone className="w-6 h-6 text-[#0077b6]" />
+            <FaPhone className="w-6 h-6 text-[#003f7f]" />
             <span>(+91) 97296-88993</span>
             <span>/</span>
-            <FaEnvelope className="w-6 h-6 text-[#0077b6]" />
+            <FaEnvelope className="w-6 h-6 text-[#003f7f]" />
             <span>aayushiverma.kkr@gmail.com</span>
           </div>
         </div>
@@ -39,9 +39,9 @@ const Navbar = () => {
         {/* Right Section: Hamburger Menu */}
         <div>
           <button onClick={toggleMenu} className="flex flex-col space-y-1">
-            <span className="block w-6 h-1 bg-black"></span>
-            <span className="block w-6 h-1 bg-black"></span>
-            <span className="block w-6 h-1 bg-black"></span>
+            <span className="block w-6 h-1 bg-white"></span>
+            <span className="block w-6 h-1 bg-white"></span>
+            <span className="block w-6 h-1 bg-white"></span>
           </button>
         </div>
       </nav>
@@ -60,7 +60,7 @@ const Navbar = () => {
             {/* Close Button */}
             <button
               onClick={toggleMenu}
-              className="self-end text-xl text-gray-700 font-bold"
+              className="self-end text-xl text-white font-bold"
             >
               &times;
             </button>
@@ -71,22 +71,22 @@ const Navbar = () => {
               <span className="text-gray-500">COPY</span>
               <span className="text-gray-500">WRITER</span>
             </div>
-
+       
             {/* Navigation Links */}
             <ul className="mt-8 space-y-4 text-3xl lg:text-4xl xl:text-6xl font-medium">
-              <NavLink to="/" className="hover:text-[#0077b6]">
+              <NavLink to="/" className="hover:text-[#003f7f]">
                 <li>Intro</li>
               </NavLink>
-              <NavLink to="/projects" className="hover:text-[#0077b6]">
+              <NavLink to="/projects" className="hover:text-[#003f7f]">
                 <li>Projects</li>
               </NavLink>
-              <NavLink to="/experience" className="hover:text-[#0077b6]">
+              <NavLink to="/experience" className="hover:text-[#003f7f]">
                 <li>Experience</li>
               </NavLink>
-              <NavLink to="/testimonials" className="hover:text-[#0077b6]">
+              <NavLink to="/testimonials" className="hover:text-[#003f7f]">
                 <li>Testimonials</li>
               </NavLink>
-              <NavLink to="/contact" className="hover:text-[#0077b6]">
+              <NavLink to="/contact" className="hover:text-[#003f7f]">
                 <li>Contact</li>
               </NavLink>
             </ul>

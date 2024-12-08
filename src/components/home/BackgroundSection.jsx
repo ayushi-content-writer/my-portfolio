@@ -1,11 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
-import "../css/BackgroundSection.css";
 
 const BackgroundSection = () => {
   const items = [
     {
-      icon: <i className="fas fa-university text-[#22008A]"></i>,
+      icon: <i className="fas fa-university text-primary"></i>,
       title: "University of Delhi",
       subtitle: "BA English Honors",
       period: "2015 - 2018",
@@ -13,7 +12,7 @@ const BackgroundSection = () => {
         "Completed undergraduate degree in English, focused on literature and creative writing.",
     },
     {
-      icon: <i className="fas fa-graduation-cap text-[#22008A]"></i>,
+      icon: <i className="fas fa-graduation-cap text-primary"></i>,
       title: "Guru Gobind Singh Indraprastha University",
       subtitle: "MA English Literature",
       period: "2018 - 2020",
@@ -21,7 +20,7 @@ const BackgroundSection = () => {
         "Completed post-graduate degree in English Literature, specializing in modern literature.",
     },
     {
-      icon: <i className="fas fa-briefcase text-[#22008A]"></i>,
+      icon: <i className="fas fa-briefcase text-primary"></i>,
       title: "The World Culture Festival",
       subtitle: "Internship",
       period: "2021",
@@ -31,10 +30,10 @@ const BackgroundSection = () => {
   ];
 
   return (
-    <div className="background-section">
-      <div className="container">
+    <div className="background-section bg-backgroundBlue py-40">
+      <div className="container mx-auto px-4">
         <motion.h2
-          className="text-4xl font-bold text-center text-[#22008A] mb-10"
+          className="text-[3rem] font-bold text-center text-secondary mb-20"
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1 }}
@@ -42,28 +41,28 @@ const BackgroundSection = () => {
           Career Background
         </motion.h2>
 
-        <div className="relative">
-          {/* Card Grid Container */}
-          <div className="card-grid-container">
-            {items.map((item, index) => (
-              <div
-                key={index}
-                className="card p-6 text-gray-800 bg-white border border-[#22008A] rounded-xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
-              >
-                <div className="flex items-center space-x-4">
-                  <div className="text-4xl">{item.icon}</div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-[#22008A]">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm text-gray-600">{item.subtitle}</p>
-                    <p className="text-sm text-gray-500">{item.period}</p>
-                  </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {items.map((item, index) => (
+            <motion.div
+              key={index}
+              className="card bg-backgroundOffWhite border border-secondary rounded-lg shadow-lg hover:shadow-xl p-6 transition-transform duration-300"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 * index, duration: 0.6 }}
+            >
+              <div className="flex items-center space-x-4 mb-4">
+                <div className="text-4xl">{item.icon}</div>
+                <div>
+                  <h3 className="text-xl font-semibold text-secondary">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-tertiary">{item.subtitle}</p>
+                  <p className="text-sm text-tertiary">{item.period}</p>
                 </div>
-                <p className="mt-2 leading-6 text-gray-600">{item.description}</p>
               </div>
-            ))}
-          </div>
+              <p className="text-tertiary leading-relaxed">{item.description}</p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </div>

@@ -9,8 +9,8 @@
   align-items: center;
   justify-content: center; /* Centers content vertically */
   text-align: center;
-  padding: 4rem 2rem;
-  background: #e6f7ff; /* Light blue container background */
+  padding: 10rem 2rem;
+  background: var(--background-off-white); /* Light blue container background */
   width: 100%;
   height: auto; /* Default to auto height */
 }
@@ -26,7 +26,7 @@
 .animated-title {
   font-size: 3rem;
   font-weight: bold;
-  color: #023047; /* Primary blue color for title */
+  color: var(--secondary); /* Deep navy blue for title */
   margin-bottom: 2rem;
   text-transform: uppercase;
 }
@@ -34,7 +34,7 @@
 .animated-description {
   font-size: 1.2rem;
   font-weight: 400;
-  color: #6c6c6c;
+  color: var(--tertiary); /* Muted gray-blue for description */
   margin-bottom: 3rem;
 }
 
@@ -52,7 +52,7 @@
   min-height: 400px;
   padding: 2rem;
   background: #ffffff; /* White card background */
-  border: 2px solid #93c5fd; /* Light blue border for highlighting */
+  border: 2px solid var(--primary); /* Vibrant blue border for highlighting */
   border-radius: 0 0 36px 0; /* Only bottom-right corner rounded */
   box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -65,7 +65,7 @@
 
 .animated-experience-item:hover {
   transform: translateY(-8px);
-  box-shadow: 0px 8px 20px rgba(37, 99, 235, 0.2); /* Subtle blue shadow on hover */
+  box-shadow: 0px 8px 20px rgba(56, 189, 248, 0.2); /* Subtle blue shadow on hover */
 }
 
 /* Logo Styling */
@@ -86,7 +86,7 @@
 .date {
   font-size: 0.9rem;
   font-weight: 600;
-  color: #60a5fa; /* Light blue text for date */
+  color: var(--hover); /* Bright aqua blue for date */
   text-transform: uppercase;
   margin-bottom: 1rem;
 }
@@ -94,27 +94,27 @@
 .company-name {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #1e40af; /* Darker blue for company name */
+  color: var(--secondary); /* Deep navy blue for company name */
   margin-bottom: 0.8rem;
 }
 
 .subtitle {
   font-size: 1rem;
-  color: #2563eb; /* Medium blue for subtitle */
+  color: var(--primary); /* Vibrant blue for subtitle */
   margin-bottom: 1rem;
   font-style: italic;
 }
 
 .role {
   font-size: 1.1rem;
-  color: #555555;
+  color: var(--tertiary); /* Muted gray-blue for role text */
   margin-bottom: 1rem;
   line-height: 1.5;
 }
 
 .see-project {
   font-size: 1rem;
-  color: #2563eb; /* Medium blue for link */
+  color: var(--primary); /* Vibrant blue for link */
   font-weight: bold;
   margin-top: auto;
   text-decoration: none;
@@ -123,7 +123,7 @@
 }
 
 .see-project:hover {
-  color: #1743a3; /* Darker blue on hover */
+  color: var(--hover); /* Bright aqua blue on hover */
 }
 
 /* Mobile Adjustments */

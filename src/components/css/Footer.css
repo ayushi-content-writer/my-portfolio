@@ -1,0 +1,155 @@
+/* Footer Container */
+.footer-container {
+    display: flex;
+    height: 80vh;
+    background-color: #003f7f;
+    color: #ffffff;
+  }
+  
+  /* Left Section */
+  .footer-left {
+    flex: 3;
+    background-color: #ffffff;
+    color: #003f7f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .footer-title {
+    font-size: 4.5rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.3;
+  }
+  
+  .footer-title span {
+    color: #00509e;
+  }
+  
+  /* Right Section */
+  .footer-right {
+    flex: 7;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .footer-heading {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #ffffff;
+  }
+  
+  .footer-contact-info {
+    margin-bottom: 80px;
+  }
+  
+  .footer-contact-info p {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .footer-contact-info i {
+    font-size: 2.5rem;
+    color: #38bdf8;
+  }
+  
+  .footer-contact-info a {
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .footer-contact-info a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Social Icons */
+  .social-icons {
+    position: absolute;
+    bottom: 20px;
+    right: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .social-block {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.8rem;
+    color: #38bdf8;
+    text-decoration: none;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  
+  .social-block:hover {
+    background: rgba(56, 189, 248, 0.2);
+    color: #ffffff;
+  }
+  
+  .social-block i {
+    font-size: 2rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      height: auto;
+    }
+  
+    .footer-left,
+    .footer-right {
+      flex: none;
+      width: 100%;
+      padding: 20px 20px;
+    }
+  
+    .footer-title {
+      font-size: 3rem;
+      padding: 20px;
+    }
+  
+    .footer-heading {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+    }
+  
+    .footer-contact-info p {
+      font-size: 1.4rem;
+    }
+  
+    .footer-contact-info {
+      margin-bottom: 30px;
+    }
+  
+    .social-icons {
+      position: static;
+      margin-top: 20px;
+      flex-direction: column; /* Keep vertical arrangement on smaller screens */
+      gap: 15px;
+    }
+  
+    .social-block {
+      font-size: 1.4rem;
+      padding: 10px 20px; /* Adjust padding for smaller blocks */
+    }
+  
+    .social-block i {
+      font-size: 1.8rem;
+    }
+  }
+  
