@@ -8,27 +8,35 @@ import ProjectsSection from "../components/home/ProjectSection";
 
 const Home = () => {
   return (
-    <div className="snap-container">
+    <div>
       {/* Hero Section */}
-      
+      <section id="hero">
         <HeroSection />
-   
+      </section>
 
       {/* About Me Section */}
-       
+      <section id="about">
         <AboutMe />
+      </section>
 
-       
-        <BackgroundSection/>
-    
+      <section id="background">
+        <BackgroundSection />
+      </section>
+
       {/* Experience Section */}
-       
+      <section id="experience">
         <Experience />
+      </section>
 
-        <ProjectsSection/>
+      {/* Projects Section */}
+      <section id="projects">
+        <ProjectsSection />
+      </section>
 
-        <Testimonial/>
-      
+      {/* Testimonial Section */}
+      <section id="testimonials">
+        <Testimonial />
+      </section>
     </div>
   );
 };

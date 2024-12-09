@@ -1,7 +1,51 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import "../css/About.css";
-import profile from "../../assets/ayushiprofile.png";
+import profile from "../../assets/ayushiProfile.webp";
+
+const content = {
+  title: "About Me",
+  introduction: {
+    main: `Writer and poetess born in the cradle of a historical gem, 
+      <span class="text-primary font-bold">Kurukshetra</span>, as an English major, I was infused 
+      with a deep appreciation and fascination for <span class="text-primary font-bold">creativity and arts</span>. 
+      With a rich <span class="text-primary font-bold">experience of nearly 3 years</span> in Writing 
+      and almost a year in <span class="text-primary font-bold">Creative Management</span>, I have most lovingly 
+      woven raw ideas, giving them a <span class="text-primary font-bold">compelling edge</span>.`,
+    sub: `From writing <span class="text-primary font-bold">academic content</span> 
+      to managing a <span class="text-primary font-bold">creative team in marketing</span>, 
+      losing my mind to client calls and team management but <span class="text-primary font-bold">finding my passion</span> 
+      has been the most anticipated journey that I have covered. In the coming years, I envision 
+      myself <span class="text-primary font-bold">leading and guiding teams</span> and ideas to their conclusions.`,
+  },
+  skillsSection: {
+    title: "Skills I Offer",
+    skills: [
+      "Leadership",
+      "Content Writing",
+      "Copy Writing",
+      "Script Writing",
+      "Voiceover Artistry",
+      "Blog & Article Writing",
+      "Campaign Building",
+    ],
+  },
+  profileImage: profile,
+  backgroundAnimations: [
+    {
+      className:
+        "absolute -z-0 top-[100px] left-[50%] w-[1200px] h-[600px] bg-wave1 rounded-full blur-3xl opacity-85 animate-move-slow",
+    },
+    {
+      className:
+        "absolute -z-0 top-[400px] left-[10%] w-[200px] h-[300px] bg-wave2 rounded-full blur-3xl opacity-65 animate-move-slow",
+    },
+    {
+      className:
+        "absolute -z-0 top-[200px] left-[30%] w-[100px] h-[300px] bg-wave3 rounded-full blur-3xl animate-move-slow",
+    },
+  ],
+};
 
 const AboutMe = () => {
   const fadeIn = {
@@ -9,17 +53,11 @@ const AboutMe = () => {
     visible: { opacity: 1, y: 0 },
   };
 
-  const skills = [
-    "Leadership",
-    "Content Writing",
-    "Copy Writing",
-    "Script Writing",
-    "Voiceover Artistry",
-    "Blog & Article Writing",
-    "Campaign Building",
-  ];
+  const { title, introduction, skillsSection, profileImage, backgroundAnimations } = content;
 
-  const [checkedSkills, setCheckedSkills] = useState(new Array(skills.length).fill(false));
+  const [checkedSkills, setCheckedSkills] = useState(
+    new Array(skillsSection.skills.length).fill(false)
+  );
 
   // Auto-check skills one by one
   useEffect(() => {
@@ -44,9 +82,9 @@ const AboutMe = () => {
       transition={{ duration: 0.6 }}
     >
       {/* Animated Background Elements */}
-      <div className="absolute -z-0 top-[100px] left-[50%] w-[1200px] h-[600px] bg-wave1 rounded-full blur-3xl opacity-85 animate-move-slow"></div>
-      <div className="absolute -z-0 top-[400px] left-[10%] w-[200px] h-[300px] bg-wave2 rounded-full blur-3xl opacity-65 animate-move-slow"></div>
-      <div className="absolute -z-0 top-[200px] left-[30%] w-[100px] h-[300px] bg-wave3 rounded-full blur-3xl animate-move-slow"></div>
+      {backgroundAnimations.map((anim, index) => (
+        <div key={index} className={anim.className}></div>
+      ))}
 
       {/* Content Container */}
       <div className="relative w-full px-6 lg:px-24 flex flex-col lg:flex-row items-center justify-center gap-16 z-10">
@@ -58,55 +96,50 @@ const AboutMe = () => {
         >
           <div>
             <h1 className="text-5xl font-bold text-secondary relative">
-              About <span className="text-secondary">Me</span>
+              {title}
             </h1>
-            <p className="mt-6 text-tertiary md:text-lg xl:text-2xl leading-relaxed">
-              Writer and poetess born in the cradle of a historical gem,{" "}
-              <span className="text-primary">Kurukshetra</span>, as an English major, I was infused
-              with a deep appreciation and fascination for creativity and arts. With a rich{" "}
-              <span className="text-primary">experience of nearly 3 years</span> in Writing and
-              almost a year in <span className="text-primary">Creative management</span>, I have
-              most lovingly woven raw ideas, giving them a compelling edge.
-            </p>
-            <p className="mt-4 text-tertiary md:text-lg xl:text-2xl leading-relaxed">
-              From writing academic content to managing a creative team in the marketing field,
-              losing my mind to client calls and team management but finding my passion has been
-              the most anticipated journey that I have covered. In the coming years, I envision
-              myself leading and guiding teams and ideas to their conclusions.
-            </p>
+            <p
+              className="mt-6 text-tertiary md:text-lg xl:text-2xl leading-relaxed"
+              dangerouslySetInnerHTML={{ __html: introduction.main }}
+            ></p>
+            <p
+              className="mt-4 text-tertiary md:text-lg xl:text-2xl leading-relaxed"
+              dangerouslySetInnerHTML={{ __html: introduction.sub }}
+            ></p>
           </div>
 
           {/* Skills Section */}
-<motion.div
-  className="skills_div mt-8"
-  variants={fadeIn}
-  transition={{ duration: 0.6, delay: 0.5 }}
->
-  <h2 className="text-3xl font-semibold text-secondary">Skills I Offer</h2>
-  <div className="skills-grid mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-y-6 gap-x-4 justify-center">
-    {skills.map((skill, index) => (
-      <motion.div
-        key={index}
-        className="skill-item flex items-center justify-start gap-2"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: 0.6,
-          delay: index * 0.3,
-        }}
-      >
-        <input
-          type="checkbox"
-          checked={checkedSkills[index]}
-          readOnly
-          className="w-5 h-5 text-primary border-2 border-secondary rounded focus:ring-0"
-        />
-        <span className="text-lg text-secondary">{skill}</span>
-      </motion.div>
-    ))}
-  </div>
-</motion.div>
-
+          <motion.div
+            className="skills_div mt-8"
+            variants={fadeIn}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          >
+            <h2 className="text-3xl font-semibold text-secondary">
+              {skillsSection.title}
+            </h2>
+            <div className="skills-grid mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-y-6 gap-x-4 justify-center">
+              {skillsSection.skills.map((skill, index) => (
+                <motion.div
+                  key={index}
+                  className="skill-item flex items-center justify-start gap-2"
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.6,
+                    delay: index * 0.3,
+                  }}
+                >
+                  <input
+                    type="checkbox"
+                    checked={checkedSkills[index]}
+                    readOnly
+                    className="w-5 h-5 text-primary border-2 border-secondary rounded focus:ring-0"
+                  />
+                  <span className="text-lg text-secondary">{skill}</span>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </motion.div>
 
         {/* Right Content (Profile Image) */}
@@ -116,13 +149,11 @@ const AboutMe = () => {
           transition={{ duration: 0.6, delay: 0.8 }}
         >
           <div className="relative">
-            <div className="relative flex items-center justify-center">
-              <img
-                src={profile}
-                alt="Profile"
-                className="object-contain w-full h-full max-h-[100vh] max-w-[100%]"
-              />
-            </div>
+            <img
+              src={profileImage}
+              alt="Profile"
+              className="object-contain w-full h-full max-h-[800px] max-w-[100%]"
+            />
           </div>
         </motion.div>
       </div>

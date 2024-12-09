@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaPhone, FaEnvelope } from 'react-icons/fa'; 
-
+import { FaPhone, FaEnvelope } from "react-icons/fa";
+import { Link } from "react-scroll"; // Import Link from react-scroll
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -71,24 +70,86 @@ const Navbar = () => {
               <span className="text-gray-500">COPY</span>
               <span className="text-gray-500">WRITER</span>
             </div>
-       
+
             {/* Navigation Links */}
-            <ul className="mt-8 space-y-4 text-3xl lg:text-4xl xl:text-6xl font-medium">
-              <NavLink to="/" className="hover:text-[#003f7f]">
-                <li>Intro</li>
-              </NavLink>
-              <NavLink to="/projects" className="hover:text-[#003f7f]">
-                <li>Projects</li>
-              </NavLink>
-              <NavLink to="/experience" className="hover:text-[#003f7f]">
-                <li>Experience</li>
-              </NavLink>
-              <NavLink to="/testimonials" className="hover:text-[#003f7f]">
-                <li>Testimonials</li>
-              </NavLink>
-              <NavLink to="/contact" className="hover:text-[#003f7f]">
-                <li>Contact</li>
-              </NavLink>
+            <ul className="mt-8 text-3xl lg:text-4xl xl:text-5xl font-medium">
+              <li>
+                <Link
+                  to="hero"
+                  smooth={true}
+                  duration={500}
+                  onClick={toggleMenu}
+                  className="hover:text-[#003f7f] cursor-pointer"
+                >
+                  Intro
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="about"
+                  smooth={true}
+                  duration={500}
+                  onClick={toggleMenu}
+                  className="hover:text-[#003f7f] cursor-pointer"
+                >
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="background"
+                  smooth={true}
+                  duration={500}
+                  onClick={toggleMenu}
+                  className="hover:text-[#003f7f] cursor-pointer"
+                >
+                  Background
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="experience"
+                  smooth={true}
+                  duration={500}
+                  onClick={toggleMenu}
+                  className="hover:text-[#003f7f] cursor-pointer"
+                >
+                  Experience
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="projects"
+                  smooth={true}
+                  duration={500}
+                  onClick={toggleMenu}
+                  className="hover:text-[#003f7f] cursor-pointer"
+                >
+                  Projects
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="testimonials"
+                  smooth={true}
+                  duration={500}
+                  onClick={toggleMenu}
+                  className="hover:text-[#003f7f] cursor-pointer"
+                >
+                  Testimonials
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="contact"
+                  smooth={true}
+                  duration={500}
+                  onClick={toggleMenu}
+                  className="hover:text-[#003f7f] cursor-pointer"
+                >
+                  Contact Me
+                </Link>
+              </li>
             </ul>
 
             {/* Footer */}
@@ -105,7 +166,7 @@ const Navbar = () => {
                 </a>
               </div>
               <p className="text-gray-500 text-sm">
-                © AAyushi 2024. All rights reserved
+                © Aayushi 2024. All rights reserved
               </p>
             </div>
           </motion.div>

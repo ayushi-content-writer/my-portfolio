@@ -1,23 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 
+import Voxpop from "/voxpop.webp"
+import PodcastMarketing from "/podcast.webp"
+import Influencermarketing from "/InfluencerMarketing.webp"
+import MarketingScripts from "/MarketingScripts.webp"
+import Blogs from "/Blogs.webp"
+import academic from "/academic.webp"
+import website from "/website.webp"
+import socialMediea from "/socialMediea.webp"
+import voiceover from "/voiceover.webp"
+
 const ProjectsSection = () => {
+  const [activeProject, setActiveProject] = useState(null);
+
   const projects = [
     {
       "type": "Vox Pop",
       "description": "Real voices for real impact 🎤✨",
-      "image": "https://via.placeholder.com/400x300",
+      "image": Voxpop,
       "items": [
         {
-          "title": "Reel 1 (Awareness for a healthcare app)",
+          "title": "Awareness for a healthcare app Reel 1",
           "url": "https://www.instagram.com/reel/C6Gu023P4iJ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
         },
         {
-          "title": "Reel 2 (Awareness for a healthcare app)",
+          "title": "Awareness for a healthcare app Reel 2 ",
           "url": "https://www.instagram.com/reel/C58PF8-PkhA/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
         },
         {
-          "title": "Reel 3 (Awareness for a healthcare app)",
+          "title": "Awareness for a healthcare app Reel 3",
           "url": "https://www.instagram.com/reel/C5qo24koNkN/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
         }
       ]
@@ -25,7 +37,7 @@ const ProjectsSection = () => {
     {
       "type": "Podcast Marketing",
       "description": "Conversations that connect, stories that stick!",
-      "image": "https://via.placeholder.com/400x300",
+      "image": PodcastMarketing,
       "items": [
         {
           "title": "Podcast Example",
@@ -36,7 +48,7 @@ const ProjectsSection = () => {
     {
       "type": "Influencer Marketing",
       "description": "Local voices for a global reach",
-      "image": "https://via.placeholder.com/400x300",
+      "image": Influencermarketing,
       "items": [
         {
           "title": "Reel 1",
@@ -51,7 +63,7 @@ const ProjectsSection = () => {
     {
       "type": "Marketing Scripts",
       "description": "Scripts that sell without sounding 'salesy.'",
-      "image": "https://via.placeholder.com/400x300",
+      "image": MarketingScripts,
       "items": [
         {
           "title": "Pet Vaccination Awareness Reel 1",
@@ -70,7 +82,7 @@ const ProjectsSection = () => {
     {
       "type": "Blogs",
       "description": "Blogs that inform and entertain!",
-      "image": "https://via.placeholder.com/400x300",
+      "image": Blogs,
       "items": [
         {
           "title": "Blog for Hazoorilal Jewellers",
@@ -89,7 +101,7 @@ const ProjectsSection = () => {
     {
       "type": "Academic Writing",
       "description": "Insightful and well-researched academic content.",
-      "image": "https://via.placeholder.com/400x300",
+      "image": academic,
       "items": [
         {
           "title": "Academic Writing Folder",
@@ -98,9 +110,9 @@ const ProjectsSection = () => {
       ]
     },
     {
-      "type": "Website Content Curation",
+      "type": "Website Content Creation",
       "description": "Turning clicks into connections with every word.",
-      "image": "https://via.placeholder.com/400x300",
+      "image": website,
       "items": [
         {
           "title": "Calligraphy Classes Website",
@@ -119,7 +131,7 @@ const ProjectsSection = () => {
     {
       "type": "Social Media Content",
       "description": "Content that stops the scroll!",
-      "image": "https://via.placeholder.com/400x300",
+      "image": socialMediea,
       "items": [
         {
           "title": "Who’s who of the gang",
@@ -138,7 +150,7 @@ const ProjectsSection = () => {
     {
       "type": "Voice-over Expert",
       "description": "To deliver that pitch with clarity and character!",
-      "image": "https://via.placeholder.com/400x300",
+      "image": voiceover,
       "items": [
         {
           "title": "Yoga Day Special Reel",
@@ -148,7 +160,6 @@ const ProjectsSection = () => {
     }
   ];
 
-  
   return (
     <section className="projects-section bg-backgroundBlue py-16 px-4">
       <div className="container mx-auto">
@@ -176,17 +187,20 @@ const ProjectsSection = () => {
               transition={{ delay: index * 0.2, duration: 0.6 }}
               style={{
                 maxWidth: "350px",
-                minHeight: "400px", // Ensure uniform height
+                minHeight: "450px",
                 margin: "auto",
               }}
+              onMouseEnter={() => setActiveProject(index)}
+              onMouseLeave={() => setActiveProject(null)}
+              onClick={() => setActiveProject(activeProject === index ? null : index)}
             >
               <div className="relative">
                 <img
                   src={project.image}
                   alt={project.type}
-                  className="w-full h-[250px] object-cover rounded-t-lg"
+                  className="w-[350px] h-[300px] object-cover rounded-t-lg"
                 />
-                <div className="absolute top-0 rounded-t-lg inset-0 bg-gradient-to-br from-wave1 to-wave2 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="absolute top-0 rounded-t-lg inset-0 bg-gradient-to-br from-transparent to-secondary flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                   <p className="text-white text-center font-bold text-[30px]">
                     {project.type}
                   </p>
@@ -199,42 +213,42 @@ const ProjectsSection = () => {
                 <p className="text-tertiary">{project.description}</p>
               </div>
 
-              <div
-  className="absolute left-1/2 transform -translate-x-1/2 top-52 mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50 bg-secondary shadow-xl rounded-lg p-6 border border-primary backdrop-blur-md"
-  style={{
-    width: "90%",
-    background: "rgba(173, 216, 230, 0.6)",
-    boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.2), 0px -2px 10px rgba(255, 255, 255, 0.15)",
-    border: "1px solid rgba(255, 255, 255, 0.3)",
-    backdropFilter: "blur(10px)",
-    pointerEvents: "none", // Disable pointer events when hidden
-  }}
-  onMouseEnter={(e) => e.currentTarget.style.pointerEvents = "auto"} // Enable pointer events on hover
-  onMouseLeave={(e) => e.currentTarget.style.pointerEvents = "none"} // Disable pointer events when hover ends
->
-  <h4 className="text-2xl font-semibold text-secondary mb-6">
-    {project.type} Projects
-  </h4>
-  <ul className="space-y-3">
-    {project.items.map((item, idx) => (
-      <li key={idx}>
-        <a
-          href={item.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block w-full text-left text-white px-4 py-2 rounded-md transition-all duration-300"
-          style={{
-            background: "linear-gradient(135deg, #00509e, #003f7f)",
-            boxShadow: "inset 6px 6px 12px rgba(0, 0, 0, 0.4), inset -6px -6px 12px rgba(255, 255, 255, 0.3)",
-          }}
-        >
-          {item.title}
-        </a>
-      </li>
-    ))}
-  </ul>
-</div>
-
+              {/* Detailed view */}
+              {activeProject === index && (
+                <div
+                  className="absolute left-1/2 transform -translate-x-1/2 top-52 mt-4 opacity-100 transition-opacity duration-300 z-50 bg-secondary shadow-xl rounded-lg p-6 border border-primary backdrop-blur-md"
+                  style={{
+                    width: "90%",
+                    background: "rgba(173, 216, 230, 0.6)",
+                    boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.2), 0px -2px 10px rgba(255, 255, 255, 0.15)",
+                    border: "1px solid rgba(255, 255, 255, 0.3)",
+                    backdropFilter: "blur(10px)",
+                  }}
+                >
+                  <h4 className="text-2xl font-semibold text-secondary mb-6">
+                    {project.type} Projects
+                  </h4>
+                  <ul className="space-y-3">
+                    {project.items.map((item, idx) => (
+                      <li key={idx}>
+                        <a
+                          href={item.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block w-full text-left text-white px-4 py-2 rounded-md transition-all duration-300"
+                          style={{
+                            background: "linear-gradient(135deg, #00509e, #003f7f)",
+                            boxShadow:
+                              "inset 6px 6px 12px rgba(0, 0, 0, 0.4), inset -6px -6px 12px rgba(255, 255, 255, 0.3)",
+                          }}
+                        >
+                          {item.title}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </motion.div>
           ))}
         </div>
