@@ -4,28 +4,36 @@ import { motion } from "framer-motion";
 const BackgroundSection = () => {
   const items = [
     {
-      icon: <i className="fas fa-university text-primary"></i>,
+      icon: <i className="fas fa-graduation-cap text-primary"></i>,
       title: "University of Delhi",
       subtitle: "BA English Honors",
-      period: "2015 - 2018",
+      period: "2014 - 2017",
       description:
         "Completed undergraduate degree in English, focused on literature and creative writing.",
     },
     {
-      icon: <i className="fas fa-graduation-cap text-primary"></i>,
+      icon: <i className="fas fa-book text-primary"></i>,
+      title: "Kurukshetra University",
+      subtitle: "B.Ed (Bachelor of Education)",
+      period: "2017 - 2019",
+      description:
+        "Completed Bachelor of Education with a focus on pedagogical approaches and teaching methodologies.",
+    },
+    {
+      icon: <i className="fas fa-university text-primary"></i>,
       title: "Guru Gobind Singh Indraprastha University",
       subtitle: "MA English Literature",
-      period: "2018 - 2020",
+      period: "2021 - 2023",
       description:
-        "Completed post-graduate degree in English Literature, specializing in modern literature.",
+        "Completed post-graduate degree in English Literature, specializing in modern literature and cinema.",
     },
     {
       icon: <i className="fas fa-briefcase text-primary"></i>,
       title: "The World Culture Festival",
       subtitle: "Internship",
-      period: "2021",
+      period: "2016",
       description:
-        "Worked as an intern for content writing and event coordination during the festival.",
+        "Led a team of 20+ students from the University of Delhi, handling promotional content, event awareness campaigns, vox pop, and event management.",
     },
   ];
 
@@ -41,26 +49,28 @@ const BackgroundSection = () => {
           Career Background
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 xl:grid-cols-4">
           {items.map((item, index) => (
             <motion.div
               key={index}
-              className="card bg-backgroundOffWhite border border-secondary rounded-lg shadow-lg hover:shadow-xl p-6 transition-transform duration-300"
+              className="card bg-white border border-secondary rounded-lg shadow-lg hover:shadow-xl transition-transform duration-300"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 * index, duration: 0.6 }}
             >
-              <div className="flex items-center space-x-4 mb-4">
-                <div className="text-4xl">{item.icon}</div>
+              <div className="flex items-center space-x-4 mb-4 p-4">
+                <div className="text-3xl">{item.icon}</div>
                 <div>
                   <h3 className="text-xl font-semibold text-secondary">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-tertiary">{item.subtitle}</p>
-                  <p className="text-sm text-tertiary">{item.period}</p>
+                  <p className="text-sm text-gray-600">{item.subtitle}</p>
+                  <p className="text-sm text-gray-500">{item.period}</p>
                 </div>
               </div>
-              <p className="text-tertiary leading-relaxed">{item.description}</p>
+              <p className="text-gray-600 leading-relaxed p-4">
+                {item.description}
+              </p>
             </motion.div>
           ))}
         </div>
