@@ -55,9 +55,9 @@ const DownloadButton = () => {
         link.download = "Resume.pdf"; // Rename the downloaded file
         link.click();
 
-        // Change button text to "Open"
+        // Change button text to "Complete"
         gsap.to(textRef.current, {
-          textContent: "Open",
+          textContent: "Complete",
           duration: 0.5,
           ease: "back.out(1.7)",
         });
@@ -67,20 +67,13 @@ const DownloadButton = () => {
     }, progressInterval);
   };
 
-  const openPdf = () => {
-    if (!downloadComplete) return;
-
-    // Open the PDF file in a new tab
-    window.open(pdfUrl, "_blank");
-  };
-
   return (
     <div style={styles.wrapper}>
       <button
         ref={buttonRef}
         style={downloading ? styles.circularButton : styles.rectangularButton}
-        onClick={downloadComplete ? openPdf : startDownload}
-        disabled={downloading}
+        onClick={startDownload}
+        disabled={downloading || downloadComplete}
       >
         <span ref={textRef} style={styles.text}>
           Download CV

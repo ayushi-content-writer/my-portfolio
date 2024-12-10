@@ -21,15 +21,15 @@ const ProjectsSection = () => {
       "image": Voxpop,
       "items": [
         {
-          "title": "Awareness for a healthcare app Reel 1",
+          "title": "Awareness for a healthcare app 1",
           "url": "https://www.instagram.com/reel/C6Gu023P4iJ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
         },
         {
-          "title": "Awareness for a healthcare app Reel 2 ",
+          "title": "Awareness for a healthcare app 2",
           "url": "https://www.instagram.com/reel/C58PF8-PkhA/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
         },
         {
-          "title": "Awareness for a healthcare app Reel 3",
+          "title": "Awareness for a healthcare app 3",
           "url": "https://www.instagram.com/reel/C5qo24koNkN/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
         }
       ]
@@ -51,11 +51,11 @@ const ProjectsSection = () => {
       "image": Influencermarketing,
       "items": [
         {
-          "title": "Reel 1",
+          "title": "Content collaboration with Shankh Chadha",
           "url": "https://www.instagram.com/reel/C68zpfqvfhx/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
         },
         {
-          "title": "Reel 2",
+          "title": "Content Collaboration with Midhvan Gulati",
           "url": "https://www.instagram.com/reel/C-Nf5FOyTb6/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
         }
       ]
@@ -66,15 +66,15 @@ const ProjectsSection = () => {
       "image": MarketingScripts,
       "items": [
         {
-          "title": "Pet Vaccination Awareness Reel 1",
+          "title": "Pet Vaccination Awareness",
           "url": "https://www.instagram.com/reel/C97ZiaGyVEp/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
         },
         {
-          "title": "Pet Vaccination Awareness Reel 2",
+          "title": "Heat strokes in pets",
           "url": "https://www.instagram.com/reel/C9UzW4-yNFM/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
         },
         {
-          "title": "Pet Vaccination Awareness Reel 3",
+          "title": " Periods and taboo",
           "url": "https://www.instagram.com/reel/C7grMnMS4W3/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
         }
       ]
@@ -154,6 +154,10 @@ const ProjectsSection = () => {
       "items": [
         {
           "title": "Yoga Day Special Reel",
+          "url": "https://www.instagram.com/reel/DDO_5JwSAHP/?igsh=MTlveHRyZ3M5M3Npcw=="
+        },
+        {
+          "title": " Product Promotion",
           "url": "https://www.instagram.com/reel/DDO_5JwSAHP/?igsh=MTlveHRyZ3M5M3Npcw=="
         }
       ]

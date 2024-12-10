@@ -7,7 +7,7 @@ const Footer = () => {
       {/* Left Section */}
       <div className="footer-left">
         <h1 className="footer-title">
-          Let’s create <span>impactful</span> stories together.
+        Let’s tell your   <span>story </span> the way it <span>deserves</span>  to be <span>told!</span> 
         </h1>
       </div>
 
@@ -27,15 +27,15 @@ const Footer = () => {
         </div>
         <div className="social-icons">
           <a
-            href="https://facebook.com"
+            href="https://www.linkedin.com/in/aayushiverma7"
             target="_blank"
             rel="noopener noreferrer"
             className="social-block"
           >
-            <i className="fab fa-facebook"></i> Facebook
+            <i className="fab fa-linkedin-in"></i> Linked in
           </a>
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/thesappyhappywallflower/profilecard/?igsh=MXAxcmxmMGdsYWVhOA== "
             target="_blank"
             rel="noopener noreferrer"
             className="social-block"
@@ -43,12 +43,12 @@ const Footer = () => {
             <i className="fab fa-instagram"></i> Instagram
           </a>
           <a
-            href="https://twitter.com"
+            href="https://medium.com/@aayushiverma.kkr"
             target="_blank"
             rel="noopener noreferrer"
             className="social-block"
           >
-            <i className="fab fa-twitter"></i> Twitter
+            <i className="fab fa-medium"></i> Medium
           </a>
         </div>
       </div>

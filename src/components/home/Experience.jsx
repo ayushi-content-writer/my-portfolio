@@ -4,6 +4,7 @@ import "../css/Experience.css";
 import artLogo from "../../assets/artLogo.png";
 import logo2 from "../../assets/logo2.png";
 import indie from "../../assets/indiefluence-logo.svg";
+import freelancing from "../../assets/freelancing.png"
 
 const ExperienceAnimated = () => {
   const [inView, setInView] = useState(false);
@@ -35,23 +36,33 @@ const ExperienceAnimated = () => {
       logo: artLogo,
       date: "Apr 2019",
       company: "ALAP Jhankriti",
-      subtitle: "(now World Forum for Art and Culture)",
+      subtitle: "Assisted in planning, creating, and scheduling engaging social media content to boost event visibility.",
       role: "Social Media Marketing Intern",
-      link: "#",
+      link: "#projects",
+    },
+    {
+      logo: freelancing,
+      date: "Apr 2023",
+      company: "Self-Employed",
+      subtitle: "Crafted compelling blogs, articles, SOPs, and academic content tailored to diverse audiences, ensuring clarity, originality, and client satisfaction.",
+      role: "Freelance Writer",
+      link: "#projects",
     },
     {
       logo: logo2,
       date: "May 2021",
       company: "Content Euphoria",
+      subtitle: "Served as a writer with a proven track record of curating 100+ approved applications and research papers.",
       role: "Senior Content Writer",
-      link: "#",
+      link: "#projects",
     },
     {
       logo: indie,
       date: "Sep 2022",
       company: "Indiefluence",
+      subtitle:"Led the creation and execution of impactful content strategies, managing diverse teams to deliver high-quality campaigns across multiple industries.",
       role: "Content Head",
-      link: "#",
+      link: "#projects",
     },
   ];
 
@@ -67,7 +78,7 @@ const ExperienceAnimated = () => {
         EXPERIENCE
       </motion.h2>
       <p className="animated-description">
-        Professional experience I’ve gained through various opportunities.
+      The journey I have sailed so far...
       </p>
 
       {/* Experience Cards */}

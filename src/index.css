@@ -37,14 +37,7 @@ h1, h2 {
   color: var(--secondary); /* Headings in Deep Navy Blue */
 }
 
-a {
-  color: var(--primary); /* Links in Vibrant Blue */
-  text-decoration: none;
-}
 
-a:hover {
-  color: var(--hover); /* Hover effect for links in Bright Aqua Blue */
-}
 
 /* Buttons */
 button {

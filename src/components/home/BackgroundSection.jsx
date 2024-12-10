@@ -46,7 +46,7 @@ const BackgroundSection = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          Career Background
+          Educational Background
         </motion.h2>
 
         <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 xl:grid-cols-4">

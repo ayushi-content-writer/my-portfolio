@@ -9,8 +9,8 @@ const content = {
     main: `Writer and poetess born in the cradle of a historical gem, 
       <span class="text-primary font-bold">Kurukshetra</span>, as an English major, I was infused 
       with a deep appreciation and fascination for <span class="text-primary font-bold">creativity and arts</span>. 
-      With a rich <span class="text-primary font-bold">experience of nearly 3 years</span> in Writing 
-      and almost a year in <span class="text-primary font-bold">Creative Management</span>, I have most lovingly 
+      With a rich <span class="text-primary font-bold">experience of more than three years</span> in Writing 
+      and almost an year in <span class="text-primary font-bold">Creative Management</span>, I have most lovingly 
       woven raw ideas, giving them a <span class="text-primary font-bold">compelling edge</span>.`,
     sub: `From writing <span class="text-primary font-bold">academic content</span> 
       to managing a <span class="text-primary font-bold">creative team in marketing</span>, 
