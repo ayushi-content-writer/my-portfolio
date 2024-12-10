@@ -9,7 +9,7 @@ const DownloadButton = () => {
   const textRef = React.useRef(null);
 
   // Path to your PDF file
-  const pdfUrl = "../assets/avAts.pdf"; // Replace with the actual path to your PDF file
+  const pdfUrl = "/avAts.pdf"; // Replace with the actual path to your PDF file
 
   const startDownload = () => {
     if (downloading || downloadComplete) return;
@@ -55,7 +55,7 @@ const DownloadButton = () => {
         link.download = "Resume.pdf"; // Rename the downloaded file
         link.click();
 
-        // Change button text to "Complete"
+        // Update button text to "Complete"
         gsap.to(textRef.current, {
           textContent: "Complete",
           duration: 0.5,

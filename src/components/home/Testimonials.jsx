@@ -6,7 +6,7 @@ const TestimonialSlider = () => {
   const testimonials = [
     {
       title: "Great start for my career.",
-      text: "When I started going to the academy, I was inexperienced, so I was worried that I could do something like a graduate I saw in public presentations before I entered the school. But when I entered the school, I was able to grow while always getting the power and motivation of the teachers. I think it’s the 2nd year I have been able to absorb not only interior but also various things in my life.",
+      text: "Working under Aayushi at Indiefluence has been an incredible experience! She is not only a highly professional and experienced content head, but also a truly kind and approachable mentor. Her years of expertise shine through in everything she does, from crafting compelling strategies to guiding her team with unmatched clarity. What sets her apart is her ability to strike the perfect balance between being supportive and teaching essential boundaries, a lesson that has helped me grow both personally and professionally. Her strong work ethic and unwavering dedication to excellence have inspired me to approach my own work with greater discipline and commitment.",
       image: vanshika,
       linkedin: "https://www.linkedin.com/in/vanshika-aggarwal-1a9738220/",
     },
@@ -26,7 +26,8 @@ const TestimonialSlider = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const sliderRef = useRef(null);
-  const startPosition = useRef(0);
+  const startX = useRef(0);
+  const isDragging = useRef(false);
   const autoSlideInterval = useRef(null);
 
   const goToPrevious = () => {
@@ -57,24 +58,42 @@ const TestimonialSlider = () => {
 
   const handleTouchStart = (e) => {
     stopAutoSlide();
-    startPosition.current = e.touches[0].clientX;
+    startX.current = e.touches[0].clientX;
+    isDragging.current = true;
   };
 
   const handleTouchMove = (e) => {
-    const currentPosition = e.touches[0].clientX;
-    if (startPosition.current - currentPosition > 50) {
+    if (!isDragging.current) return;
+    const currentX = e.touches[0].clientX;
+    if (startX.current - currentX > 50) {
       goToNext();
-    } else if (startPosition.current - currentPosition < -50) {
+      isDragging.current = false;
+    } else if (startX.current - currentX < -50) {
       goToPrevious();
+      isDragging.current = false;
     }
-    startPosition.current = currentPosition;
   };
 
-  const handleMouseEnter = () => {
+  const handleMouseStart = (e) => {
     stopAutoSlide();
+    startX.current = e.clientX;
+    isDragging.current = true;
   };
 
-  const handleMouseLeave = () => {
+  const handleMouseMove = (e) => {
+    if (!isDragging.current) return;
+    const currentX = e.clientX;
+    if (startX.current - currentX > 50) {
+      goToNext();
+      isDragging.current = false;
+    } else if (startX.current - currentX < -50) {
+      goToPrevious();
+      isDragging.current = false;
+    }
+  };
+
+  const handleMouseEnd = () => {
+    isDragging.current = false;
     startAutoSlide();
   };
 
@@ -92,10 +111,16 @@ const TestimonialSlider = () => {
       <div
         ref={sliderRef}
         className="relative max-w-4xl mx-auto overflow-hidden"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
+        onMouseDown={handleMouseStart}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseEnd}
+        onMouseLeave={handleMouseEnd}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
+        onTouchEnd={() => {
+          isDragging.current = false;
+          startAutoSlide();
+        }}
       >
         <div
           className="testimonial-slider flex transition-transform duration-700 ease-in-out"
@@ -118,32 +143,29 @@ const TestimonialSlider = () => {
                   className="w-full h-80 md:h-full object-cover"
                 />
               </div>
-              <div className="p-6 md:p-8 flex-1 md:order-1 relative">
-                <div className="quote-icon text-primary text-5xl md:text-6xl leading-none">
+              <div className="p-4 md:p-8 flex-1 md:order-1 relative flex flex-col">
+                <div className="quote-icon text-primary text-5xl md:text-6xl leading-none mb[-50px]">
                   “
                 </div>
-                <h2 className="text-secondary font-extrabold text-xl md:text-2xl mt-4">
+                <h2 className="text-secondary font-extrabold text-xl md:text-2xl ">
                   {testimonial.title}
                 </h2>
-                <p className="text-tertiary mt-4 text-sm md:text-base leading-relaxed">
-                  {testimonial.text}
-                </p>
                 <div
-  onClick={(e) => e.stopPropagation()} // Prevents card click propagation
-  className="mt-4 px-4 py-2 bg-backgroundBlue text-[#0077B5]  border border-[#0077B5] rounded-full shadow-inner hover:bg-[#0077B5] hover:text-white hover:border-white transition-all"
->
-  <a
-    href={testimonial.linkedin}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="flex items-center justify-center"
-  >
-    <i className="fab fa-linkedin-in mr-2"></i>
-    View LinkedIn
-  </a>
-</div>
-
-
+                  className="text-tertiary mt-4 text-sm md:text-base leading-relaxed overflow-y-auto max-h-36"
+                  style={{
+                    WebkitBoxOrient: "vertical",
+                    WebkitLineClamp: 6,
+                    display: "-webkit-box",
+                  }}
+                >
+                  {testimonial.text}
+                </div>
+                <div
+                  className="mt-4 px-4 py-2 bg-backgroundBlue text-[#0077B5] border border-[#0077B5] rounded-full shadow-inner hover:bg-[#0077B5] hover:text-white hover:border-white transition-all self-end"
+                  onClick={(e) => e.stopPropagation()} // Prevents card click propagation
+                >
+                  View LinkedIn
+                </div>
               </div>
             </a>
           ))}

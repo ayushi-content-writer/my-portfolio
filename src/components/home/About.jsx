@@ -26,7 +26,8 @@ const content = {
       "Copy Writing",
       "Script Writing",
       "Voiceover Artistry",
-      "Blog & Article Writing",
+      "Article Writing",
+      "Blog Writing",
       "Campaign Building",
     ],
   },
@@ -135,7 +136,7 @@ const AboutMe = () => {
                     readOnly
                     className="w-5 h-5 text-primary border-2 border-secondary rounded focus:ring-0"
                   />
-                  <span className="text-lg text-secondary">{skill}</span>
+                  <span className="text-sm md:text-lg text-secondary">{skill}</span>
                 </motion.div>
               ))}
             </div>
