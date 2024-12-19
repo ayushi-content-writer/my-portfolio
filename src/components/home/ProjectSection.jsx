@@ -203,6 +203,7 @@ const ProjectsSection = () => {
                   src={project.image}
                   alt={project.type}
                   className="w-[350px] h-[300px] object-cover rounded-t-lg"
+                  loading="lazy"
                 />
                 <div className="absolute top-0 rounded-t-lg inset-0 bg-gradient-to-br from-transparent to-secondary flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                   <p className="text-white text-center font-bold text-[30px]">

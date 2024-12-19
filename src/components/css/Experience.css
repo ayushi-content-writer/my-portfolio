@@ -1,120 +1,108 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
-
 /* Container Styling */
-.experience-animated-container {
-  font-family: "Montserrat", sans-serif;
+.experience-container {
+  /* font-family: "Montserrat", sans-serif; */
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* Centers content vertically */
   text-align: center;
-  padding: 10rem 2rem;
-  background: var(--background-off-white); /* Light blue container background */
+  padding: 5rem 2rem;
+  background: var(--background-off-white);
   width: 100%;
-  height: auto; /* Default to auto height */
-}
-
-/* Experience Section with 100vh on Desktop */
-@media (min-width: 1024px) {
-  .experience-animated-container {
-    height: auto; /* Full viewport height for large screens */
-  }
 }
 
 /* Title Styling */
-.animated-title {
+.experience-title {
   font-size: 3rem;
   font-weight: bold;
-  color: var(--secondary); /* Deep navy blue for title */
+  color: var(--secondary);
   margin-bottom: 2rem;
   text-transform: uppercase;
 }
 
-.animated-description {
+.experience-description {
   font-size: 1.2rem;
   font-weight: 400;
-  color: var(--tertiary); /* Muted gray-blue for description */
+  color: var(--tertiary);
   margin-bottom: 3rem;
 }
 
-/* Experience List Styling */
-.animated-experience-list {
-  display: flex;
-  flex-wrap: wrap;
+/* Experience Grid Styling */
+.experience-grid {
+  display: grid;
   gap: 2rem;
-  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   width: 100%;
+  justify-content: center;
 }
 
-.animated-experience-item {
-  width: 340px;
-  min-height: 400px;
-  padding: 2rem;
-  background: #ffffff; /* White card background */
-  border: 2px solid var(--primary); /* Vibrant blue border for highlighting */
-  border-radius: 0 0 36px 0; /* Only bottom-right corner rounded */
+@media (min-width: 1240px) {
+  .experience-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Card Styling */
+.experience-card {
+  background: #ffffff;
+  border: 2px solid var(--primary);
+  border-radius: 0 0 36px 0;
   box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  position: relative;
   text-align: left;
+  height: auto;
 }
 
-.animated-experience-item:hover {
+.experience-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0px 8px 20px rgba(56, 189, 248, 0.2); /* Subtle blue shadow on hover */
+  box-shadow: 0px 8px 20px rgba(56, 189, 248, 0.2);
 }
 
 /* Logo Styling */
-.logo-container {
-  width: 100%;
+.experience-logo {
+  width: 100px;
+  height: auto;
   margin-bottom: 1rem;
-  display: flex;
-  justify-content: flex-start;
-}
-
-.company-logo {
-  height: 100px;
-  width: auto;
   object-fit: contain;
 }
 
-/* Content Styling */
-.date {
+/* Card Content */
+.experience-date {
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--hover); /* Bright aqua blue for date */
+  color: var(--hover);
   text-transform: uppercase;
   margin-bottom: 1rem;
 }
 
-.company-name {
+.experience-company {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--secondary); /* Deep navy blue for company name */
+  color: var(--secondary);
   margin-bottom: 0.8rem;
 }
 
-.subtitle {
+.experience-subtitle {
   font-size: 1rem;
-  color: var(--primary); /* Vibrant blue for subtitle */
+  color: var(--primary);
   margin-bottom: 1rem;
   font-style: italic;
 }
 
-.role {
+.experience-role {
   font-size: 1.1rem;
-  color: var(--tertiary); /* Muted gray-blue for role text */
+  color: var(--tertiary);
   margin-bottom: 1rem;
   line-height: 1.5;
 }
 
-.see-project {
+.experience-link {
   font-size: 1rem;
-  color: var(--primary); /* Vibrant blue for link */
+  color: var(--primary);
   font-weight: bold;
   margin-top: auto;
   text-decoration: none;
@@ -122,28 +110,24 @@
   transition: color 0.3s;
 }
 
-.see-project:hover {
-  color: var(--hover); /* Bright aqua blue on hover */
+.experience-link:hover {
+  color: var(--hover);
 }
 
 /* Mobile Adjustments */
 @media (max-width: 768px) {
-  .animated-title {
+  .experience-title {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
   }
 
-  .animated-description {
+  .experience-description {
     font-size: 1rem;
     margin-bottom: 2rem;
   }
 
-  .animated-experience-item {
+  .experience-card {
     width: 100%;
-    min-height: auto; /* Adjust for smaller screens */
-  }
-
-  .experience-animated-container {
-    height: auto; /* Allow the height to adjust dynamically on mobile */
+    padding: 1.5rem;
   }
 }

@@ -16,12 +16,12 @@ const TestimonialSlider = () => {
       image: anurag,
       linkedin: "https://www.linkedin.com/in/anurag-mishra-995534339",
     },
-    {
-      title: "Motivation and growth.",
-      text: "Being part of this community has taught me invaluable lessons. The support, guidance, and motivation from peers and mentors have pushed me to achieve things I never thought possible.",
-      image: "https://via.placeholder.com/400x300",
-      linkedin: "https://www.linkedin.com/in/example-profile-2/",
-    },
+    // {
+    //   title: "Motivation and growth.",
+    //   text: "Being part of this community has taught me invaluable lessons. The support, guidance, and motivation from peers and mentors have pushed me to achieve things I never thought possible.",
+    //   image: "https://via.placeholder.com/400x300",
+    //   linkedin: "https://www.linkedin.com/in/example-profile-2/",
+    // },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -141,6 +141,7 @@ const TestimonialSlider = () => {
                   src={testimonial.image}
                   alt={testimonial.title}
                   className="w-full h-80 md:h-full object-cover"
+                  loading="lazy"
                 />
               </div>
               <div className="p-4 md:p-8 flex-1 md:order-1 relative flex flex-col">
