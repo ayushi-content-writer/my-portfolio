@@ -154,7 +154,7 @@ const AboutMe = () => {
               src={profileImage}
               alt="Profile"
               className="object-contain w-full h-full max-h-[800px] max-w-[100%]"
-              loading="lazy"
+               
             />
           </div>
         </motion.div>

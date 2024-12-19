@@ -95,7 +95,7 @@ const ExperienceAnimated = () => {
               src={exp.logo}
               alt={exp.company}
               className="experience-logo"
-              loading="lazy"
+               
             />
             <p className="experience-date">{exp.date}</p>
             <h3 className="experience-company">{exp.company}</h3>

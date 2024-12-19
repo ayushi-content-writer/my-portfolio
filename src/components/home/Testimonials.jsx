@@ -141,7 +141,7 @@ const TestimonialSlider = () => {
                   src={testimonial.image}
                   alt={testimonial.title}
                   className="w-full h-80 md:h-full object-cover"
-                  loading="lazy"
+                   
                 />
               </div>
               <div className="p-4 md:p-8 flex-1 md:order-1 relative flex flex-col">
