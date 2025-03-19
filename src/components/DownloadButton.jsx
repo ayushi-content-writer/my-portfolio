@@ -52,7 +52,7 @@ const DownloadButton = () => {
         // Trigger PDF download
         const link = document.createElement("a");
         link.href = pdfUrl;
-        link.download = "Resume.pdf"; // Rename the downloaded file
+        link.download = "AayushiVermaResume.pdf"; // Rename the downloaded file
         link.click();
 
         // Update button text to "Complete"

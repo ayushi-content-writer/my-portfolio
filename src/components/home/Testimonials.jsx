@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import vanshika from "../../assets/project/vanshika.png";
 import anurag from "../../assets/project/Anurag.jpg";
+import dishagirdhar from "../../assets/project/disha.png";
 
 const TestimonialSlider = () => {
   const testimonials = [
@@ -16,6 +17,12 @@ const TestimonialSlider = () => {
       image: anurag,
       linkedin: "https://www.linkedin.com/in/anurag-mishra-995534339",
     },
+    {
+      title: "A Trusted Partner for SEO-Driven Content Success",
+      text: "Aayushi and I teamed up on 3 different projects, and she quickly became my go-to freelance writer.\n\nShe worked on website copy and blogs for two clients. The results? Over 100k impressions in just 3 months, with a 2.5% CTR for one of them. Moving further, she managed SEO strategy on her own — those impressions grew to 350k in the next three months. That's a solid testament to her expertise in SEO content strategy.\n\nHer writing and marketing skills are top-notch, but what makes her even better is how fun she is to work with.\n\nShe meets deadlines, keeps everyone updated, and makes sure all parties involved stay aligned.\n\nIf you're looking for more than just a writer — someone who can help plan the project and create an SEO content strategy that actually delivers results — I recommend Aayushi.\n\n- Disha Girdhar",
+      image: dishagirdhar,
+      linkedin: "https://www.linkedin.com/in/dishagirdhar/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+    }
     // {
     //   title: "Motivation and growth.",
     //   text: "Being part of this community has taught me invaluable lessons. The support, guidance, and motivation from peers and mentors have pushed me to achieve things I never thought possible.",
@@ -141,7 +148,7 @@ const TestimonialSlider = () => {
                   src={testimonial.image}
                   alt={testimonial.title}
                   className="w-full h-80 md:h-full object-cover"
-                   
+
                 />
               </div>
               <div className="p-4 md:p-8 flex-1 md:order-1 relative flex flex-col">
